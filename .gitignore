@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Raw data files
+*_raw.csv
+*.csv
+
+# Old model files
+lightning_xgboost_model.pkl
+feature_cols.pkl
+
+# Plot images
+*.png
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
