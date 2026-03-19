@@ -10,18 +10,18 @@ using machine learning on real meteorological data.
 ## 🌐 Live Demo
 [streamlit-link](https://lightning-prediction-india.streamlit.app/)
 
-## 📌 Problem Statement
+## Problem Statement
 Given daily weather conditions (temperature, humidity, rainfall,
 wind speed, solar radiation), predict the probability of lightning
 occurrence for Mumbai and Goa.
 
-## 📦 Data Sources
+## Data Sources
 | Source | Purpose | Period |
 |---|---|---|
 | NASA LIS VHRMC (GHRC DAAC) | Lightning labels — satellite flash rate | 1998–2013 |
 | Open-Meteo Historical API | Weather features — hourly aggregated to daily | 2015–2024 |
 
-## 🔧 Approach
+## Approach
 - Merged satellite lightning climatology with modern weather API data
 - Engineered 32 meteorological features: dew point, CAPE proxy,
   7-day rolling averages, day-over-day gradients, dry thunderstorm flags
@@ -30,13 +30,13 @@ occurrence for Mumbai and Goa.
 - Diagnosed Logistic Regression failure via coefficient inversion
   analysis switched Mumbai to Random Forest
 
-## 📊 Model Performance
+## Model Performance
 | City | Model | ROC-AUC | PR-AUC | Accuracy | ⚡ Recall |
 |---|---|---|---|---|---|
 | Mumbai | Random Forest | 0.9818 | 0.9942 | 94% | 95% |
 | Goa | XGBoost | 0.9853 | 0.9952 | 96% | 98% |
 
-## 💡 Key Findings
+## Key Findings
 - **7-day rolling humidity** was the strongest predictor in both cities
 - **Raw daily rainfall had near-zero importance** Mumbai experiences
   significant dry thunderstorms in pre-monsoon months where lightning
@@ -46,14 +46,14 @@ occurrence for Mumbai and Goa.
 - **Logistic Regression failed** for Mumbai due to multicollinearity
   among correlated humidity features causing coefficient inversion
 
-## ⚠️ Known Limitation
+## Known Limitation
 Labels are derived from NASA LIS monthly climatology averages.
 The model overestimates risk during meteorologically ambiguous
 transition months (March–April) where weather conditions overlap
 with active lightning months. Production upgrade: replace with
 daily WWLLN strike records for precise threshold learning.
 
-## 🚀 How to Run
+## How to Run
 ```bash
 pip install -r requirements.txt
 streamlit run app_multicity.py
@@ -70,5 +70,5 @@ streamlit run app_multicity.py
 └── requirements.txt
 ```
 
-## 👤 Author
+## Author
 **Dipankar** — [GitHub](https://github.com/DatawithDipankar)
