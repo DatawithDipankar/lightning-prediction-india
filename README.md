@@ -8,7 +8,7 @@ using machine learning on real meteorological data.
 ![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange)
 
 ## 🌐 Live Demo
-link
+[streamlit-link](https://lightning-prediction-india.streamlit.app/)
 
 ## 📌 Problem Statement
 Given daily weather conditions (temperature, humidity, rainfall,
